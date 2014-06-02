@@ -18,4 +18,4 @@ node index.js
 * app now runs on port 4000
 * naigate to http://127.0.0.1:4000/home
 
-### Good lucl !!
+### Good luck !!
