@@ -17,4 +17,6 @@ app.use('/home', function(req, res, next) {
 	res.end('<h1>Hello world, this is your home</h1>');
 });
 
-app.listen(4000);
+app.listen(4000, function() {
+	console.info('App running on port 127.0.0.1:4000');
+});
