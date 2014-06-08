@@ -15,11 +15,21 @@ app.use(function(req, res, next) {
 	next();
 });
 
+app.use(connect.cookieParser('keyboard cat'));
+app.use(connect.session());
 app.use('/home', function(req, res, next) {
+	var sess = req.session;
 	res.writeHead(200, {
-		"Content-Type" : "text/html"
-	})
-	res.end('<h1>Hello world, this is your home</h1>');
+			"Content-Type" : "text/html"
+	});
+	if(sess.views) {
+		sess.views = 0;
+		res.end('<h1>Hello world, this is your home</h1>');
+	}
+	else {
+		sess.views ++;
+		res.end('<h1>Hello world, this is your home '+ req.session.views+'</h1>');	
+	}
 });
 
 //Middleware for error handlers
