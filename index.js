@@ -7,28 +7,28 @@ var connect = require('connect'),
 
 //Adding connect logger middleware
 
-//Logger to log the requests
-app.use(connect.logger());
-
+app.use(connect.cookieParser('mysecretkey'));
 app.use(function(req, res, next) {
-	console.log(req.url);
 	next();
 });
 
-app.use(connect.cookieParser('keyboard cat'));
+
 app.use(connect.session());
 app.use('/home', function(req, res, next) {
+	
 	var sess = req.session;
 	res.writeHead(200, {
-			"Content-Type" : "text/html"
+			"Content-Type" : "text/html",
 	});
-	if(sess.views) {
-		sess.views = 0;
+	if(!sess.views) {
+		sess.views = 1;
+		sess.name = " Mr.Connect ";
 		res.end('<h1>Hello world, this is your home</h1>');
+		
 	}
 	else {
-		sess.views ++;
-		res.end('<h1>Hello world, this is your home '+ req.session.views+'</h1>');	
+		res.end('<h1>Hello '+sess.name+', this is your home '+ req.session.views+'</h1>');	
+		sess.views++;	
 	}
 });
 
