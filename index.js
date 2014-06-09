@@ -6,6 +6,7 @@ var connect = require('connect'),
 //Else the /home will never be excuted.
 
 //Adding connect logger middleware
+//test comment
 
 app.use(connect.cookieParser('mysecretkey'));
 app.use(function(req, res, next) {
@@ -17,9 +18,9 @@ app.use(connect.session());
 app.use('/home', function(req, res, next) {
 	
 	var sess = req.session;
-	res.writeHead(200, {
-			"Content-Type" : "text/html",
-	});
+	res.statusCode = 200;
+	res.setHeader('Content-Type','text/html');
+	res.setHeader('Set-Cookie', "name=khan");
 	if(!sess.views) {
 		sess.views = 1;
 		sess.name = " Mr.Connect ";
