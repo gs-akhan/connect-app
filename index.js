@@ -13,7 +13,9 @@ app.use(function(req, res, next) {
 	next();
 });
 
+//addingd static middleware
 
+app.use(connect.static(__dirname+'/public'));
 app.use(connect.session());
 app.use('/home', function(req, res, next) {
 	
