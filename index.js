@@ -14,8 +14,9 @@ app.use(function(req, res, next) {
 });
 
 //addingd static middleware
-
+app.use(connect.directory('public', {icons:true}));
 app.use(connect.static(__dirname+'/public'));
+
 app.use(connect.session());
 app.use('/home', function(req, res, next) {
 	
