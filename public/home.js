@@ -1,1 +1,1 @@
-//Some Javascript here
+alert('we included the script');
