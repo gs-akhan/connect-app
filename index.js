@@ -1,13 +1,8 @@
-var connect = require('connect'),
-	app 	= connect();
+var express = require('express'),
+	connect = require('connect');
 
-//#1 middleware to Log requests.
-//You need to call next() because the control in then moved to exceute another middleware
-//Else the /home will never be excuted.
 
-//Adding connect logger middleware
-//test comment
-
+var app = express();
 app.use(connect.cookieParser('mysecretkey'));
 app.use(function(req, res, next) {
 	next();
@@ -16,9 +11,9 @@ app.use(function(req, res, next) {
 //addingd static middleware
 app.use(connect.directory('public', {icons:true}));
 app.use(connect.static(__dirname+'/public'));
-
 app.use(connect.session());
-app.use('/home', function(req, res, next) {
+
+app.get('/home', function(req, res, next) {
 	
 	var sess = req.session;
 	res.statusCode = 200;
