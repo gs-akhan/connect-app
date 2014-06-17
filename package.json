@@ -1,19 +1,12 @@
 {
-  "name": "ConnectApp",
-  "version": "0.0.0",
-  "description": "This is demo app to teach connect middleware",
-  "main": "index.js",
-  "dependencies": {
-    "connect": "~2.18.0",
-    "express": "~4.4.3"
-  },
-  "devDependencies": {},
+  "name": "application-name",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "keywords": [
-    "connect-app"
-  ],
-  "author": "azharkhan",
-  "license": "MIT"
+  "dependencies": {
+    "express": "3.4.8",
+    "jade": "*"
+  }
 }
