@@ -1,3 +1,3 @@
 (function() {
-	alert('Welcome, the app shall start here');
+	console.log('Welcome, the app shall start here');
 })(window)
