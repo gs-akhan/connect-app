@@ -1,7 +1,7 @@
-![alt tag](https://travis-ci.org/gs-akhan/connect-app.svg?branch=master)
+https.org/gs-akhan/connect-app.svg?branch=master
 
 Photo Sharing App
-===========
+===========://travis-ci
 
 ### How to install ??
 * Firsly you need to clone to repo 
