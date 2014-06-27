@@ -1,4 +1,4 @@
-https://travis-ci.org/gs-akhan/connect-app.svg?branch=master
+[![Build Status](https://travis-ci.org/gs-akhan/connect-app.svg?branch=master)](https://travis-ci.org/gs-akhan/connect-app)
 
 Photo Sharing App
 ===========
