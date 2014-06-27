@@ -1,4 +1,6 @@
-connect-app
+![alt tag](https://travis-ci.org/gs-akhan/connect-app.svg?branch=master)
+
+Photo Sharing App
 ===========
 
 ### How to install ??
